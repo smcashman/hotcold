@@ -21,10 +21,14 @@ $(document).ready(function(){
 		var numberGuessed = $("#userGuess").val();
 		if (isNaN(numberGuessed)) {
 			$("h2#feedback").html("Please enter a number");
+			return false;
+
 		}
 
-		else if (numberGuessed > 100 || numberGuessed < 1 ) {
+		if (numberGuessed > 100 || numberGuessed < 1 ) {
 			$("h2#feedback").html("Enter a number between 1 and 100");
+			return false;
+
 		}
 
 		if (guessThis < numberGuessed) {
